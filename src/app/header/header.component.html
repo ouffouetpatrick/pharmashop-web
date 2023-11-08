@@ -1,0 +1,121 @@
+<header class="d-flex align-items-center">
+    <div class="container">
+       <div class="row align-items-center">
+          <div class="col-md-2 col-5">
+             <!-- logo -->
+             <div class="logo-area">
+                <a [routerLink]="['/']">
+                <img class="lazy-load img-fluid" src="../../assets/img/logo_pharmacie.min.png" alt="img"/>
+                </a>
+             </div>
+          </div>
+          <div class="col-md-6 col-2">
+             <!-- menu -->
+             <div class="menu nav-menu">
+                <ul>
+                   <li>
+                      <a [routerLink]="['/']" routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
+                   </li>
+                   <li>
+                      <a [routerLink]="['/pharmacie']" routerLinkActive="active" >Pharmacie</a>
+                   </li>
+                   <li>
+                      <a [routerLink]="['/blog']" routerLinkActive="active" >Blog</a>
+                   </li>
+                   <li>
+                      <a [routerLink]="['/apropos']" routerLinkActive="active" >A propos</a>
+                   </li>
+                </ul>
+             </div>
+          </div>
+          <div class="col-md-4 col-5">
+             <div class="search-area-box d-flex justify-content-end align-items-center">
+                <form class="mr_20">
+                   <input type="text" placeholder="Rechercher...">
+                </form>
+                <a href="#" class="mobile-search-area mr_20">
+                <i class="fal fa-search"></i>
+                </a>
+                <a href="#" class="user-area mr_20" data-toggle="modal" data-target="#sign-in">
+                <i class="fal fa-user"></i>
+                </a>
+                <div class="cart-area">
+                   <a [routerLink]="['/panier']" routerLinkActive="active" >
+                   <i class="fal fa-shopping-bag"></i>
+                   <span class="num-area">3</span>
+                   </a>
+                   <!-- cart hover -->
+                   <div class="cart-hover-area">
+                      <div class="box">
+                         <div class="media">
+                            <img class="lazy-load" src="../../assets/img/cart-img.jpg" alt="img"/>
+                            <div class="media-body">
+                               <h4>Produit1</h4>
+                               <p>1000 Fcfa</p>
+                            </div>
+                         </div>
+                         <a href="#" class="hover-cart-item-close">
+                         <i class="fal fa-times"></i>
+                         </a>
+                      </div>
+                      <div class="box">
+                         <div class="media">
+                            <img class="lazy-load" src="../../assets/img/cart-img-2.jpg" alt="img"/>
+                            <div class="media-body">
+                               <h4>Produit2</h4>
+                               <p>1000 Fcfa</p>
+                            </div>
+                         </div>
+                         <a href="#" class="hover-cart-item-close">
+                         <i class="fal fa-times"></i>
+                         </a>
+                      </div>
+                      <div class="box bx-last">
+                         <div class="media">
+                            <img class="lazy-load" src="../../assets/img/cart-img-3.jpg" alt="img"/>
+                            <div class="media-body">
+                               <h4>Produit3</h4>
+                               <p>1000 Fcfa</p>
+                            </div>
+                         </div>
+                         <a href="#" class="hover-cart-item-close">
+                         <i class="fal fa-times"></i>
+                         </a>
+                      </div>
+                      <div class="d-flex hover-cart-subtotal justify-content-between">
+                         <p>Total</p>
+                         <p>3000 Fcfa</p>
+                      </div>
+                      <div class="hover-cart-btn-area mt_30">
+                         <a [routerLink]="['/panier']" routerLinkActive="active"  class="button w-100">Voir panier</a>
+                         <a [routerLink]="['/commander']" routerLinkActive="active"  class="button w-100 mt_20">Commander</a>
+                      </div>
+                   </div>
+                </div>
+                <!-- menu toggler -->
+                <div class="hamburger-menu">
+                   <span class="line-top"></span>
+                   <span class="line-center"></span>
+                   <span class="line-bottom"></span>
+                </div>
+             </div>
+          </div>
+          <!-- search-form -->
+          <div class="search-form-wrapper">
+             <form>
+                <div class="input">
+                   <input type="text" placeholder="Search here">
+                   <div class="btn-area">
+                      <button type="submit" class="btn-sub">
+                      <i class="fal fa-search"></i>
+                      </button>
+                   </div>
+                </div>
+                <div class="close-search">
+                   <i class="fal fa-times"></i>
+                </div>
+             </form>
+          </div>
+       </div>
+    </div>
+</header>

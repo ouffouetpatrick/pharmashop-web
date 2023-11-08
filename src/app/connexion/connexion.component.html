@@ -1,0 +1,92 @@
+<div class="sign-in-modal-wrapper">
+    <div class="modal fade" id="sign-in">
+       <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+             <div class="modal-close" data-dismiss="modal">
+                <i class="fal fa-times"></i>
+             </div>
+             <ul class="nav nav-pills mb-3">
+                <div *ngIf="showSuccessAlert" class="success-alert">
+                  Succès ! Votre inscription a été effectuée avec succès.
+                </div>
+                <li class="nav-item">
+                   <a class="nav-link active" data-toggle="pill" href="#pills-si">SE CONNECTER</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" data-toggle="pill" href="#pills-su">S'INSCRIRE</a>
+                </li>
+             </ul>
+             <div class="tab-content">
+                <div class="tab-pane fade show active" id="pills-si">
+                   <form action="#" class="mt_20 needs-validation" novalidate="">
+                      <div class="input_group">
+                         <label for="sign-in-for">Adresse mail or Nom utilisateur*</label>
+                         <input id="sign-in-for" type="email" class="form-control" required="">
+                      </div>
+                      <div class="input_group mt_10">
+                         <label for="sign-in-for-2">Mot de passe*</label>
+                         <input id="sign-in-for-2" type="password" class="form-control" required="">
+                      </div>
+                      <div class="remember-area">
+                         <div class="check-group">
+                            <input type="checkbox" id="rem">
+                            <label for="rem">Se souvenir de moi</label>
+                         </div>
+                         <a href="#">Mot de passe oublié</a>
+                      </div>
+                      <div class="sign-btn-area">
+                         <button type="submit" class="button w-100">CONNEXION</button>
+                      </div>
+                      <!-- <div class="or-sign">
+                         <p>ou se connecter avec</p>
+                         <div class="or-sign-btn">
+                            <a class="button btn-google" href="#">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                            </a>
+                         </div>
+                      </div> -->
+                   </form>
+                </div>
+                <div class="tab-pane fade" id="pills-su">
+                   <form [formGroup]="employeForm" class="mt_20 needs-validation" novalidate="">
+                      <div class="input_group">
+                         <label for="sign-up-for">Nom*</label>
+                         <input [formControlName]="'nom'" id="sign-up-for" type="text" class="form-control" required="">
+                      </div>
+                      <div class="input_group">
+                         <label for="sign-up-for">Prenoms*</label>
+                         <input [formControlName]="'prenoms'" id="sign-up-for" type="text" class="form-control" required="">
+                      </div>
+                      <div class="input_group">
+                         <label for="sign-up-for">Adresse mail or Nom utilisateur*</label>
+                         <input [formControlName]="'email'" id="sign-up-for" type="email" class="form-control" required="">
+                      </div>
+                      <div class="input_group mt_10">
+                         <label for="sign-in-for-2">Mot de passe*</label>
+                         <input [formControlName]="'password'" id="sign-in-for-2" type="password" class="form-control" required="">
+                      </div>
+                      <div class="sign-btn-area">
+                        <button class="button-submit w-100" 
+                           (click)="save()" 
+                           [ngClass]="{'disabled-button': employeForm.invalid}" 
+                           [disabled]="employeForm.invalid">
+                           VALIDER
+                        </button>
+                      </div>
+                      <!-- <div class="or-sign">
+                         <p>ou s'inscrire avec</p>
+                         <div class="or-sign-btn">
+                            <a class="button btn-google" href="#">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                            </a>
+                         </div>
+                      </div> -->
+                   </form>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>

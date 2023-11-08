@@ -1,0 +1,358 @@
+<main>
+    <!-- start home area -->
+    <div class="home-area d-flex align-items-center curved-home lazy-img"  style="background-image: url(../../assets/img/pharmacie.jpg);">
+       <div class="container">
+          <div class="row align-items-center">
+             <div class="col-md-12">
+                <div class="home-text-area">
+                   <!-- <p>Home Medical Supplies</p> -->
+                   <h2>Bienvenue<br> Sur PharmaShop</h2>
+                   <span>Avec nous, votre medicament est à porter de main.</span>
+                   <div class="btn-area mt_50">
+                      <a [routerLink]="['/pharmacie']"  class="button btn-home-1">Acheter Maintenant</a>
+                      <a [routerLink]="['/apropos']" class="button btn-home-2 ml_20">A propos</a>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- end home area -->
+    <!-- start add-v1 area -->
+    <div class="add-area v1">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-6 mt_30">
+                <div class="item-box position-relative">
+                   <div class="img-area">
+                      <img class="lazy-load img-fluid" src="../../assets/img/drpr.png" alt="img"/>
+                   </div>
+                   <div class="text-area">
+                      <p>Categorie</p>
+                      <h2>Douleur/Fièvre</h2>
+                      <span>-20%</span>
+                      <div class="btn-area">
+                         <a [routerLink]="['/pharmacie']"  class="button btn-item">Acheter maintenant</a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-6 mt_30">
+                <div class="item-box position-relative v2">
+                   <div class="img-area">
+                      <img class="lazy-load img-fluid" src="../../assets/img/pr-20.png" alt="img"/>
+                   </div>
+                   <div class="text-area">
+                      <p>Categorie</p>
+                      <h2>Beauté et soins</h2>
+                      <span>-10%</span>
+                      <div class="btn-area">
+                         <a [routerLink]="['/pharmacie']" class="button btn-item">Acheter maintenant</a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- end add-v1 area -->
+    <!-- start product tab area -->
+    <div class="product-tab-area">
+       <div class="container">
+          <div class="title-inner d-flex justify-content-between align-items-center">
+             <div class="title">
+                <h3>Produit en vedette</h3>
+             </div>
+             <div class="tab">
+                <ul class="nav nav-pills">
+                   <li class="nav-item">
+                      <a class="nav-link active" data-toggle="pill" href="#pills-all">Tous</a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#pills-baby-care">Douleur/Fièvre</a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#pills-beverages">Rhume-Toux-Gorge</a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#pills-medical">Digestion</a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-supplies">Beauté et soins</a>
+                   </li>
+                </ul>
+             </div>
+          </div>
+          <div class="row mt_5">
+             <div class="col-md-12">
+                <div class="tab-element">
+                   <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-all">
+                         <div class="row">
+                            <div *ngFor="let produit of produits" class="col-xl-3 col-lg-4 col-sm-6 mt_30">
+                               <div class="item-box dis-box">
+                                  <a [routerLink]="['/detail-produit', produit.id]">
+                                  <img class="img-fluid lazy-load" [src]="produit.image" alt="img"/>
+                                  </a>
+                                  <div class="text-area">
+                                     <a [routerLink]="['/detail-produit', produit.id]">
+                                        <p>{{produit.categorie}}</p>
+                                        <h3>{{produit.nom}}</h3>
+                                     </a>
+                                     <div class="price-area d-flex justify-content-center">
+                                        <p>{{produit.prix}}</p>
+                                        <span *ngIf="produit.reduction"><del>{{produit.reduction}}</del></span>
+                                     </div>
+                                     <a [routerLink]="['/detail-produit', produit.id]"  class="add-cart button">
+                                        Ajouter
+                                        <i class="fal fa-shopping-bag"></i>
+                                     </a>
+                                  </div>
+                                  <div *ngIf="produit.reduction" class="discount-area">-22%</div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-baby-care">
+                         <div class="row">
+                           <div *ngFor="let produit of produits" class="col-xl-3 col-lg-4 col-sm-6 mt_30">
+                              <div class="item-box dis-box">
+                                 <a href="product-view.html">
+                                 <img class="img-fluid lazy-load" src="../../assets/img/pr-3.jpg" alt="img"/>
+                                 </a>
+                                 <div class="text-area">
+                                    <a href="product-view.html">
+                                       <p>{{produit.categorie}}</p>
+                                       <h3>{{produit.nom}}</h3>
+                                    </a>
+                                    <div class="price-area d-flex justify-content-center">
+                                       <p>{{produit.prix}}</p>
+                                       <span *ngIf="produit.reduction"><del>{{produit.reduction}}</del></span>
+                                    </div>
+                                    <a [routerLink]="['/detail-produit']"  class="add-cart button">
+                                       Ajouter
+                                       <i class="fal fa-shopping-bag"></i>
+                                    </a>
+                                 </div>
+                                 <div *ngIf="produit.reduction" class="discount-area">-22%</div>
+                              </div>
+                           </div>
+                         </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-beverages">
+                        <div class="row">
+                           <div *ngFor="let produit of produits" class="col-xl-3 col-lg-4 col-sm-6 mt_30">
+                              <div class="item-box dis-box">
+                                 <a href="product-view.html">
+                                 <img class="img-fluid lazy-load" src="../../assets/img/pr-4.jpg" alt="img"/>
+                                 </a>
+                                 <div class="text-area">
+                                    <a href="product-view.html">
+                                       <p>{{produit.categorie}}</p>
+                                       <h3>{{produit.nom}}</h3>
+                                    </a>
+                                    <div class="price-area d-flex justify-content-center">
+                                       <p>{{produit.prix}}</p>
+                                       <span *ngIf="produit.reduction"><del>{{produit.reduction}}</del></span>
+                                    </div>
+                                    <a [routerLink]="['/detail-produit']"  class="add-cart button">
+                                       Ajouter
+                                       <i class="fal fa-shopping-bag"></i>
+                                    </a>
+                                 </div>
+                                 <div *ngIf="produit.reduction" class="discount-area">-22%</div>
+                              </div>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-medical">
+                        <div class="row">
+                           <div *ngFor="let produit of produits" class="col-xl-3 col-lg-4 col-sm-6 mt_30">
+                              <div class="item-box dis-box">
+                                 <a href="product-view.html">
+                                 <img class="img-fluid lazy-load" src="../../assets/img/pr-5.jpg" alt="img"/>
+                                 </a>
+                                 <div class="text-area">
+                                    <a href="product-view.html">
+                                       <p>{{produit.categorie}}</p>
+                                       <h3>{{produit.nom}}</h3>
+                                    </a>
+                                    <div class="price-area d-flex justify-content-center">
+                                       <p>{{produit.prix}}</p>
+                                       <span *ngIf="produit.reduction"><del>{{produit.reduction}}</del></span>
+                                    </div>
+                                    <a [routerLink]="['/detail-produit']"  class="add-cart button">
+                                       Ajouter
+                                       <i class="fal fa-shopping-bag"></i>
+                                    </a>
+                                 </div>
+                                 <div *ngIf="produit.reduction" class="discount-area">-22%</div>
+                              </div>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-supplies">
+                        <div class="row">
+                           <div *ngFor="let produit of produits" class="col-xl-3 col-lg-4 col-sm-6 mt_30">
+                              <div class="item-box dis-box">
+                                 <a href="product-view.html">
+                                 <img class="img-fluid lazy-load" src="../../assets/img/pr-6.jpg" alt="img"/>
+                                 </a>
+                                 <div class="text-area">
+                                    <a href="product-view.html">
+                                       <p>{{produit.categorie}}</p>
+                                       <h3>{{produit.nom}}</h3>
+                                    </a>
+                                    <div class="price-area d-flex justify-content-center">
+                                       <p>{{produit.prix}}</p>
+                                       <span *ngIf="produit.reduction"><del>{{produit.reduction}}</del></span>
+                                    </div>
+                                    <a [routerLink]="['/detail-produit']" class="add-cart button">
+                                       Ajouter
+                                       <i class="fal fa-shopping-bag"></i>
+                                    </a>
+                                 </div>
+                                 <div *ngIf="produit.reduction" class="discount-area">-22%</div>
+                              </div>
+                           </div>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- end product tab area -->
+    <!-- start blog area -->
+    <div class="blog-area">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-12">
+                <div class="title-inner">
+                   <div class="title">
+                      <h3>Blog</h3>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="row mt_5 align-items-center">
+             <div class="col-lg-6 mt_30 mt_30">
+                <div class="blog-elements">
+                   <div class="item d-flex align-items-center">
+                      <div class="blog-hover-img">
+                         <a href="blog-view.html">
+                            <img class="lazy-load" src="../../assets/img/blog-1.jpg" alt="img"/>
+                         </a>
+                      </div>
+                      <div class="text">
+                         <a href="blog-view.html">
+                            <p>27 Janvier 2023</p>
+                            <h4>Lorem, ipsum dolor.<br> Lorem ipsum dolor sit amet.</h4>
+                         </a>
+                      </div>
+                   </div>
+                </div>
+                <div class="blog-elements mt_30">
+                   <div class="item d-flex align-items-center">
+                      <div class="blog-hover-img">
+                         <a href="blog-view.html">
+                            <img class="lazy-load" src="../../assets/img/blog-2.jpg" alt="img"/>
+                         </a>
+                      </div>
+                      <div class="text">
+                         <a href="blog-view.html">
+                            <p>22 Decembre 2022</p>
+                            <h4>Lorem, ipsum dolor.<br> Lorem ipsum dolor sit amet consectetur.</h4>
+                         </a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-lg-6 mt_30">
+                <div class="testimonial-box">
+                   <div class="owl-carousel testimonial-carousel">
+                      <div class="item">
+                         <h2>Lorem Ipsum dolor.</h2>
+                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam fugit in reiciendis repellendus accusantium illum assumenda facere quibusdam obcaecati deserunt? </p>
+                         <div class="media">
+                            <img class="mr_20 lazy-load" src="../../assets/img/client.jpg" alt="img"/>
+                            <div class="media-body">
+                               <h4>Serge pacome</h4>
+                               <span>Home Clening</span>
+                            </div>
+                         </div>
+                         <div class="quote-area">
+                            <img class="lazy-load" src="../../assets/img/quote.svg" alt="img"/>
+                         </div>
+                      </div>
+                      <div class="item">
+                         <h2>Lorem Lorem Lorem</h2>
+                         <p>Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. </p>
+                         <div class="media">
+                            <img class="mr_20 lazy-load" src="../../assets/img/client.jpg" alt="img"/>
+                            <div class="media-body">
+                               <h4>Henri James</h4>
+                               <span>Home Clening</span>
+                            </div>
+                         </div>
+                         <div class="quote-area">
+                            <img class="lazy-load" src="../../assets/img/quote.svg" alt="img"/>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- end blog area -->
+    <!-- start feature area -->
+    <div class="feature-area">
+       <div class="container">
+          <div class="row">
+             <div class="col-lg-3 col-sm-6 mt_30">
+                <div class="feature-box d-flex align-items-center">
+                   <img class="mr_20 lazy-load" src="../../assets/img/payment.svg" alt="img"/>
+                   <div class="text-box">
+                      <h4>Paiement</h4>
+                      <span>Carte accepté</span>
+                   </div>
+                </div>
+             </div>
+             <div class="col-lg-3 col-sm-6 mt_30">
+                <div class="feature-box d-flex align-items-center">
+                   <img class="mr_20 lazy-load" src="../../assets/img/shipping.svg" alt="img"/>
+                   <div class="text-box">
+                      <h4>Livraison</h4>
+                      <span>Rapide</span>
+                   </div>
+                </div>
+             </div>
+             <div class="col-lg-3 col-sm-6 mt_30">
+                <div class="feature-box d-flex align-items-center">
+                   <img class="mr_20 lazy-load" src="../../assets/img/support.svg" alt="img"/>
+                   <div class="text-box">
+                      <h4>Service client</h4>
+                      <span>24/24</span>
+                   </div>
+                </div>
+             </div>
+             <div class="col-lg-3 col-sm-6 mt_30">
+                <div class="feature-box d-flex align-items-center last">
+                   <img class="mr_20 lazy-load" src="../../assets/img/saving.svg" alt="img"/>
+                   <div class="text-box">
+                      <h4>Code promo</h4>
+                      <span>Offert</span>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- end feature area -->
+    <app-newsletter></app-newsletter>
+    <!-- start sign-in modal  -->
+    <app-connexion></app-connexion>
+    <!-- end sign-in modal  -->
+  </main>

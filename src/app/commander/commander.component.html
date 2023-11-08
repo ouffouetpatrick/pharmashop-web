@@ -1,0 +1,130 @@
+<main>
+    <!-- start home area -->
+    <div class="home-area check-view-home d-flex align-items-center lazy-img"  style="background-image: url(../../assets/img/about-hero.jpg);">
+       <div class="container">
+          <div class="row align-items-center justify-content-center">
+             <div class="col-md-12">
+                <div class="home-text-area">
+                   <h2>Commande</h2>
+                   <div>
+                      <ol class="breadcrumb">
+                         <li class="breadcrumb-item"><a [routerLink]="['/']">Accueil</a></li>
+                         <li class="breadcrumb-item active">Commande</li>
+                      </ol>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- end home area -->
+    <!-- star checkout area -->
+    <div class="checkout-main-area">
+       <form class="needs-validation billing-form" novalidate="">
+          <div class="container">
+             <div class="row">
+                <div class="col-md-12">
+                   <div class="title mb_20">
+                      <h2>Details commande :</h2>
+                   </div>
+                </div>
+                <div class="col-lg-8">
+                   <div class="row">
+                      <div class="col-md-12 mt_20">
+                         <div class="input_group">
+                            <label>Addresse de livraison *</label>
+                            <input class="form-control" type="email" required="">
+                         </div>
+                      </div>
+                      <div class="col-md-6 mt_20">
+                         <div class="input_group">
+                            <label>Telephone</label>
+                            <input class="form-control" type="text">
+                         </div>
+                      </div>
+                      <div class="col-md-8 mt_20">
+                         <div class="paiement">Mode paiement</div>
+                         <div class="check-group-paiement">
+                         <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">&nbsp;
+                            <label class="form-check-label" for="flexRadioDefault1">
+                               Cash
+                            </label>
+                         </div>
+                         <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">&nbsp;
+                            <label class="form-check-label" for="flexRadioDefault1">
+                               <img class="lazy-load" src="../../assets/img/moov9.png" alt="img"/>
+                            </label>
+                          </div>&nbsp; &nbsp;
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>&nbsp;
+                            <label class="form-check-label" for="flexRadioDefault2">
+                               <img class="lazy-load" src="../../assets/img/orange9.png" alt="img"/>
+                            </label>
+                          </div>&nbsp; &nbsp;
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>&nbsp;
+                            <label class="form-check-label" for="flexRadioDefault2">
+                               <img class="lazy-load" src="../../assets/img/mtn9.png" alt="img"/>
+                            </label>
+                          </div>&nbsp; &nbsp;
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>&nbsp;
+                            <label class="form-check-label" for="flexRadioDefault2">
+                               <img class="lazy-load" src="../../assets/img/logo_uba.png" alt="img"/>
+                            </label>
+                          </div>&nbsp; &nbsp;
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>&nbsp;
+                            <label class="form-check-label" for="flexRadioDefault2">
+                               <img class="lazy-load" src="../../assets/img/logo_djamo.png" alt="img"/>
+                            </label>
+                          </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-lg-4 mt_30">
+                   <div class="order-place-wrapper">
+                      <div class="box">
+                         <h2>Résumé</h2>
+                         <div class="label common-checkout">
+                            <p>Intitulé</p>
+                            <p>Total</p>
+                         </div>
+                         <div class="p-name common-checkout">
+                            <p>Produit1</p>
+                            <span>1000 Fcfa</span>
+                         </div>
+                         <div class="p-name common-checkout">
+                            <p>Produit2</p>
+                            <span>1000 Fcfa</span>
+                         </div>
+                         <div class="sub-t common-checkout">
+                            <p>Produit3</p>
+                            <span>1000 Fcfa</span>
+                         </div>
+                         <div class="ship common-checkout">
+                            <p>livraison</p>
+                            <span>500 Fcfa</span>
+                         </div>
+                         <div class="total common-checkout">
+                            <p>Total général</p>
+                            <p>3500 Fcfa</p>
+                         </div>
+                         <div class="btn-area">
+                            <button type="submit" class="button">Valider</button>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </form>
+    </div>
+    <app-newsletter></app-newsletter>
+    <!-- start sign-in modal  -->
+    <app-connexion></app-connexion>
+    <!-- end sign-in modal  -->
+ </main>
